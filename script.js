@@ -10,9 +10,8 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
 
-
-// Looks at player selection and computer selection and finds out who one and console logs it
     if (playerSelection === "rock") {
+
         if (computerSelection === "rock") {
             ties++
             return "You tie"
@@ -23,7 +22,9 @@ function playRound(playerSelection, computerSelection) {
             playerWins++
             return "You win, Rock beats Scissors"
         }
+
     } else if (playerSelection === "paper") {
+
         if (computerSelection === "rock") {
             playerWins++
             return "You win, Paper beats Rock"
@@ -34,7 +35,9 @@ function playRound(playerSelection, computerSelection) {
             computerWins++
             return "You lose, Scissors beats Paper"
         }
+
     } else if (playerSelection === "scissors") {
+
         if (computerSelection === "rock") {
             computerWins++
             return "You lose, Rock beats Scissors"
@@ -45,10 +48,10 @@ function playRound(playerSelection, computerSelection) {
             ties++
             return "You tie"
         }
+
     } else {
         return "Please choose between rock, paper or scissors"
     }
-
 };
 
 
