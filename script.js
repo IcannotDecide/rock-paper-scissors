@@ -14,32 +14,32 @@ function playRound(playerSelection, computerSelection) {
 // Looks at player selection and computer selection and finds out who one and console logs it
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
-            console.log("You tie, computer chose rock")
+            return "You tie"
         } else if (computerSelection === "paper") {
-            console.log("You lose, computer chose paper")
+            return "You lose, Paper beats Rock"
         } else {
-            console.log("You win, computer chose scissors")
+            return "You win, Rock beats Scissors"
         }
     } else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            console.log("You win, computer chose rock")
+            return "You win, Paper beats Rock"
         } else if (computerSelection === "paper") {
-            console.log("You tie, computer chose paper")
+            return "You tie"
         } else {
-            console.log("You lose, computer chose scissors")
+            return "You lose, Scissors beats Paper"
         }
     } else if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
-            console.log("You lose, computer chose rock")
+            return "You lose, Rock beats Scissors"
         } else if (computerSelection === "paper") {
-            console.log("You win, computer chose paper")
+            return "You win, Scissors beats Paper"
         } else {
-            console.log("You tie, computer chose scissors")
+            return "You tie"
         }
     } else {
-        console.log("Please choose between rock, paper or scissors")
+        return "Please choose between rock, paper or scissors"
     }
 
 };
 
-playRound(playerSelection, getComputerChoice)
+console.log(playRound(playerSelection, getComputerChoice));
