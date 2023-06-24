@@ -1,17 +1,12 @@
-function getComputerChoice() {
-    if ((Math.floor(Math.random() * 3) + 1) === 1) {
-        return "rock"
-    } else if ((Math.floor(Math.random() * 3) + 1) === 2) {
-        return "paper"
-    } else {
-        return "scissors"
-    }
-};
-
-
 let playerWins = 0;
 let computerWins = 0;
 let ties = 0;
+
+const choices = ["rock", "paper", "scissors"];
+
+function getComputerChoice() {
+    return choices[Math.floor(Math.random()*3)]; 
+};
 
 function playRound(playerSelection, computerSelection) {
 
