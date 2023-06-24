@@ -17,26 +17,35 @@ function playRound(playerSelection, computerSelection) {
 // Looks at player selection and computer selection and finds out who one and console logs it
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
+            ties++
             return "You tie"
         } else if (computerSelection === "paper") {
+            computerWins++
             return "You lose, Paper beats Rock"
         } else {
+            playerWins++
             return "You win, Rock beats Scissors"
         }
     } else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
+            playerWins++
             return "You win, Paper beats Rock"
         } else if (computerSelection === "paper") {
+            ties++
             return "You tie"
         } else {
+            computerWins++
             return "You lose, Scissors beats Paper"
         }
     } else if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
+            computerWins++
             return "You lose, Rock beats Scissors"
         } else if (computerSelection === "paper") {
+            playerWins++
             return "You win, Scissors beats Paper"
         } else {
+            ties++
             return "You tie"
         }
     } else {
