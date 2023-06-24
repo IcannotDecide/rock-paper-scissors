@@ -6,6 +6,9 @@ const getComputerChoice =
 
 const playerSelection = prompt("Choose rock, paper or scissors").toLowerCase();
 
+let playerWins = 0;
+let computerWins = 0;
+let ties = 0;
 
 function playRound(playerSelection, computerSelection) {
     console.log(playerSelection, computerSelection);
@@ -43,3 +46,16 @@ function playRound(playerSelection, computerSelection) {
 };
 
 console.log(playRound(playerSelection, getComputerChoice));
+
+function game() {
+    let playerWins = 0;
+    let computerWins = 0;
+    let ties = 0;
+    let i = 0;
+    while (i < 5) {
+        console.log(i)
+        i++
+    };
+};
+
+game();
