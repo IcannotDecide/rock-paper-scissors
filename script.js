@@ -14,7 +14,6 @@ let computerWins = 0;
 let ties = 0;
 
 function playRound(playerSelection, computerSelection) {
-    console.log(playerSelection, computerSelection);
 
 
 // Looks at player selection and computer selection and finds out who one and console logs it
@@ -62,10 +61,16 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     let i = 0;
     while (i < 5) {
-        playRound(prompt("Choose rock, paper or scissors").toLowerCase(), getComputerChoice())
-        console.log(playerWins, computerWins, ties)
+        console.log(playRound(prompt("Choose rock, paper or scissors").toLowerCase(), getComputerChoice()))
         i++
     };
+    if (playerWins > computerWins) {
+        return `You win! ${playerWins}-${computerWins}`
+    } else if (playerWins < computerWins) {
+        return `You lose ${computerWins}-${playerWins}`
+    } else {
+        return `You tie ${playerWins}-${computerWins}`
+    }
 };
 
-game();
+console.log(game());
