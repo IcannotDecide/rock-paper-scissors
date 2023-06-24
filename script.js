@@ -1,8 +1,12 @@
-const getComputerChoice =
-    (Math.floor(Math.random() * 3) + 1) === 1 ? "rock"
-        : (Math.floor(Math.random() * 3) + 1) === 2 ? "paper"
-            : "scissors";
-
+function getComputerChoice() {
+    if ((Math.floor(Math.random() * 3) + 1) === 1) {
+        return "rock"
+    } else if ((Math.floor(Math.random() * 3) + 1) === 2) {
+        return "paper"
+    } else {
+        return "scissors"
+    }
+};
 
 
 let playerWins = 0;
@@ -58,7 +62,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     let i = 0;
     while (i < 5) {
-        playRound(prompt("Choose rock, paper or scissors").toLowerCase(), getComputerChoice)
+        playRound(prompt("Choose rock, paper or scissors").toLowerCase(), getComputerChoice())
         console.log(playerWins, computerWins, ties)
         i++
     };
