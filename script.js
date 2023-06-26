@@ -56,12 +56,9 @@ function playRound(playerSelection, computerSelection) {
 
 
 
-function game() {
-    let i = 0;
-    while (i < 5) {
-        console.log(playRound(prompt("Choose rock, paper or scissors").toLowerCase(), getComputerChoice()))
-        i++
-    };
+function game(buttonPressed) {
+    console.log(playRound(buttonPressed, getComputerChoice()));
+
     if (playerWins > computerWins) {
         return `You win! ${playerWins}-${computerWins}`
     } else if (playerWins < computerWins) {
@@ -71,4 +68,11 @@ function game() {
     }
 };
 
-console.log(game());
+const rock = document.querySelector('button[data-choice="rock"]');
+rock.addEventListener("click", () => game("rock"));
+
+const paper = document.querySelector('button[data-choice="paper"]');
+paper.addEventListener("click", () => game("paper"));
+
+const scissors = document.querySelector('button[data-choice="scissors"]');
+scissors.addEventListener("click", () => game("scissors"));
