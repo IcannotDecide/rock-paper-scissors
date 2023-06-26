@@ -17,39 +17,39 @@ function playRound(playerSelection, computerSelection) {
 
         if (computerSelection === "rock") {
             ties++
-            return "You tie"
+            div.textContent = "You tie"
         } else if (computerSelection === "paper") {
             computerWins++
-            return "You lose, Paper beats Rock"
+            div.textContent = "You lose, Paper beats Rock"
         } else {
             playerWins++
-            return "You win, Rock beats Scissors"
+            div.textContent = "You win, Rock beats Scissors"
         }
 
     } else if (playerSelection === "paper") {
 
         if (computerSelection === "rock") {
             playerWins++
-            return "You win, Paper beats Rock"
+            div.textContent = "You win, Paper beats Rock"
         } else if (computerSelection === "paper") {
             ties++
-            return "You tie"
+            div.textContent = "You tie"
         } else {
             computerWins++
-            return "You lose, Scissors beats Paper"
+            div.textContent = "You lose, Scissors beats Paper"
         }
 
     } else if (playerSelection === "scissors") {
 
         if (computerSelection === "rock") {
             computerWins++
-            return "You lose, Rock beats Scissors"
+            div.textContent = "You lose, Rock beats Scissors"
         } else if (computerSelection === "paper") {
             playerWins++
-            return "You win, Scissors beats Paper"
+            div.textContent = "You win, Scissors beats Paper"
         } else {
             ties++
-            return "You tie"
+            div.textContent = "You tie"
         }
 
     } else {
@@ -62,15 +62,18 @@ function playRound(playerSelection, computerSelection) {
 
 function game(buttonPressed) {
 
-    playRound(buttonPressed, getComputerChoice());
 
-    if (playerWins > computerWins) {
-        return div.textContent = `You win! ${playerWins}-${computerWins}`
-    } else if (playerWins < computerWins) {
-        return div.textContent = `You lose ${playerWins}-${computerWins}`
-    } else {
-        return div.textContent = `You tie ${playerWins}-${computerWins}`
+    if (playerWins === 5 || computerWins === 5) {
+        
+
+        if (playerWins > computerWins) { 
+            return div.textContent = `You win! ${playerWins}-${computerWins}`
+        } else if (playerWins < computerWins) {
+        return div.textContent = `You lose ${computerWins}-${playerWins}`;
+        }
     }
+
+    playRound(buttonPressed, getComputerChoice());
 };
 
 
